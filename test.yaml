@@ -1,0 +1,13 @@
+---
+- name: Create a file with specific content in the Documents directory
+  hosts: localhost
+  tasks:
+    - name: Ensure Documents directory exists
+      file:
+        path: ~/Documents
+        state: directory
+
+    - name: Create a file with "Hey this works!" content
+      copy:
+        dest: ~/Documents/example.txt
+        content: "Hey this works!"
